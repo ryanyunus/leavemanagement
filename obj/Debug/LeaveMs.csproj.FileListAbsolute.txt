@@ -1,0 +1,14 @@
+C:\Users\A\source\repos\LeaveMs\bin\Debug\LeaveMs.exe.config
+C:\Users\A\source\repos\LeaveMs\bin\Debug\LeaveMs.exe
+C:\Users\A\source\repos\LeaveMs\bin\Debug\LeaveMs.pdb
+C:\Users\A\source\repos\LeaveMs\obj\Debug\LeaveMs.csproj.AssemblyReference.cache
+C:\Users\A\source\repos\LeaveMs\obj\Debug\LeaveMs.Properties.Resources.resources
+C:\Users\A\source\repos\LeaveMs\obj\Debug\LeaveMs.csproj.GenerateResource.cache
+C:\Users\A\source\repos\LeaveMs\obj\Debug\LeaveMs.csproj.CoreCompileInputs.cache
+C:\Users\A\source\repos\LeaveMs\obj\Debug\LeaveMs.exe
+C:\Users\A\source\repos\LeaveMs\obj\Debug\LeaveMs.pdb
+C:\Users\A\source\repos\LeaveMs\obj\Debug\LeaveMs.Login.resources
+C:\Users\A\source\repos\LeaveMs\obj\Debug\LeaveMs.Employee.resources
+C:\Users\A\source\repos\LeaveMs\obj\Debug\LeaveMs.Leaves.resources
+C:\Users\A\source\repos\LeaveMs\obj\Debug\LeaveMs.Categories.resources
+C:\Users\A\source\repos\LeaveMs\obj\Debug\LeaveMs.ViewLeaves.resources
