@@ -14,8 +14,9 @@ Dalam contoh di atas, kolom IDENTITY tidak disertakan dalam daftar kolom, karena
 Dengan melakukan perubahan tersebut, Anda seharusnya dapat menghindari kesalahan "Column name or number of supplied values does not match table definition" yang muncul karena adanya kolom IDENTITY dalam tabel EmployeeTbl.
 
 ====
+
 User name, [29 May 2023 15:01]
-agar bisa dipilih dan ditampilkan di textbox pilih menu properties selectionmode fullrowselect
+agar bisa dipilih dan ditampilkan di textbox pilih menu properties selectionmode fullrowselect dan autosize column mode diisi fill
 
 User name, [29 May 2023 15:02]
 UNTUK MENAMBAHKAN ATAU INSERT KE TABEL KALAU ERROR Column name or number of supplied values does not match table definition JANGAN LUPA MEMBUAT    IDENTITY (1, 1) NOT NULL,
