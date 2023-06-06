@@ -24,13 +24,11 @@ namespace LeaveMs
             string Query = "select * from CategoryTbl";
             CategoryList.DataSource = Con.GetData(Query);
         }
-
         private void SaveBtn_Click(object sender, EventArgs e)
         {
             try
             {
-
-                if(CapNameTb.Text == "")
+                if (CapNameTb.Text == "")
                 {
                     MessageBox.Show("Missing Data !!!");
                 }
@@ -38,31 +36,22 @@ namespace LeaveMs
                 {
                     string Category = CapNameTb.Text;
                     string Query = "insert into CategoryTbl values('{0}')";
-                    //string Query = "INSERT INTO CategoryTable (CatName) VALUES ('{0}')";
-
                     Query = string.Format(Query, Category);
                     Con.SetData(Query);
                     ShowCategories();
                     CapNameTb.Text = "";
-
                 }
             }
             catch (Exception Ex)
             {
                 MessageBox.Show(Ex.Message);
             }
-
-        }
-
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
         int Key = 0;
         private void CategoryList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             CapNameTb.Text = CategoryList.SelectedRows[0].Cells[1].Value.ToString();
-            if(CapNameTb.Text == "")
+            if (CapNameTb.Text == "")
             {
                 Key = 0;
             }
@@ -73,16 +62,15 @@ namespace LeaveMs
 
         }
 
-        private void CapNameTb_TextChanged(object sender, EventArgs e)
+        private void pictureBox4_Click(object sender, EventArgs e)
         {
-
+            Application.Exit();
         }
 
         private void EditBtn_Click(object sender, EventArgs e)
         {
             try
             {
-
                 if (CapNameTb.Text == "")
                 {
                     MessageBox.Show("Missing Data !!!");
@@ -90,29 +78,23 @@ namespace LeaveMs
                 else
                 {
                     string Category = CapNameTb.Text;
-                   // string Query = "Update CategoryTbl set CatName = '{0}' where CatId = {1})";
                     string Query = "Update CategoryTbl set CatName = '{0}' where CatId = {1}";
-
-                    //string Query = "INSERT INTO CategoryTable (CatName) VALUES ('{0}')";
                     Query = string.Format(Query, Category, Key);
                     Con.SetData(Query);
                     ShowCategories();
                     CapNameTb.Text = "";
-
                 }
             }
             catch (Exception Ex)
             {
                 MessageBox.Show(Ex.Message);
             }
-
         }
 
         private void DeleteBtn_Click(object sender, EventArgs e)
         {
             try
             {
-
                 if (Key == 0)
                 {
                     MessageBox.Show("Missing Data !!!");
@@ -120,19 +102,38 @@ namespace LeaveMs
                 else
                 {
                     string Category = CapNameTb.Text;
-                    string Query = "delete  from CategoryTbl where CatId = {0}";
-
-                    Query = string.Format(Query,Key);
+                    string Query = "delete from CategoryTbl where CatId = {0}";
+                    Query = string.Format(Query, Key);
                     Con.SetData(Query);
                     ShowCategories();
                     CapNameTb.Text = "";
-
                 }
             }
             catch (Exception Ex)
             {
                 MessageBox.Show(Ex.Message);
             }
+        }
+
+        private void EmpLbl_Click(object sender, EventArgs e)
+        {
+            Employee Obj = new Employee();
+            Obj.Show();
+            this.Hide();
+        }
+
+        private void LeaveLbl_Click(object sender, EventArgs e)
+        {
+            Leaves Obj = new Leaves();
+            Obj.Show();
+            this.Hide();
+        }
+
+        private void CategoryLbl_Click(object sender, EventArgs e)
+        {
+            Categories Obj = new Categories();
+            Obj.Show();
+            this.Hide();
         }
     }
 }

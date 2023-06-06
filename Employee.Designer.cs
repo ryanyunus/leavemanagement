@@ -41,7 +41,7 @@ namespace LeaveMs
             this.label6 = new System.Windows.Forms.Label();
             this.PasswordTb = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.AddTb = new System.Windows.Forms.TextBox();
+            this.EmppAddTb = new System.Windows.Forms.TextBox();
             this.EditBtn = new System.Windows.Forms.Button();
             this.DeleteBtn = new System.Windows.Forms.Button();
             this.SaveBtn = new System.Windows.Forms.Button();
@@ -53,9 +53,9 @@ namespace LeaveMs
             this.panel3 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.CategoryLbl = new System.Windows.Forms.Label();
+            this.EmpLbl = new System.Windows.Forms.Label();
+            this.LeaveLbl = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -79,6 +79,7 @@ namespace LeaveMs
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1096, 46);
             this.panel1.TabIndex = 1;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label1
             // 
@@ -90,6 +91,7 @@ namespace LeaveMs
             this.label1.Size = new System.Drawing.Size(387, 25);
             this.label1.TabIndex = 3;
             this.label1.Text = "Employee Management System 1.0";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -102,6 +104,7 @@ namespace LeaveMs
             this.label2.Size = new System.Drawing.Size(211, 25);
             this.label2.TabIndex = 4;
             this.label2.Text = "Manage Employee";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // EmpNameTb
             // 
@@ -109,6 +112,7 @@ namespace LeaveMs
             this.EmpNameTb.Name = "EmpNameTb";
             this.EmpNameTb.Size = new System.Drawing.Size(216, 26);
             this.EmpNameTb.TabIndex = 5;
+            this.EmpNameTb.TextChanged += new System.EventHandler(this.EmpNameTb_TextChanged);
             // 
             // label3
             // 
@@ -121,6 +125,7 @@ namespace LeaveMs
             this.label3.Size = new System.Drawing.Size(189, 25);
             this.label3.TabIndex = 6;
             this.label3.Text = "Employee Name";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -133,6 +138,7 @@ namespace LeaveMs
             this.label4.Size = new System.Drawing.Size(203, 25);
             this.label4.TabIndex = 8;
             this.label4.Text = "Employee Gender";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
             // 
@@ -145,6 +151,7 @@ namespace LeaveMs
             this.label5.Size = new System.Drawing.Size(194, 25);
             this.label5.TabIndex = 10;
             this.label5.Text = "Employee Phone";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // EmpPhoneTb
             // 
@@ -152,6 +159,7 @@ namespace LeaveMs
             this.EmpPhoneTb.Name = "EmpPhoneTb";
             this.EmpPhoneTb.Size = new System.Drawing.Size(216, 26);
             this.EmpPhoneTb.TabIndex = 9;
+            this.EmpPhoneTb.TextChanged += new System.EventHandler(this.EmpPhoneTb_TextChanged);
             // 
             // label6
             // 
@@ -164,6 +172,7 @@ namespace LeaveMs
             this.label6.Size = new System.Drawing.Size(228, 25);
             this.label6.TabIndex = 12;
             this.label6.Text = "Employee Password";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // PasswordTb
             // 
@@ -171,6 +180,7 @@ namespace LeaveMs
             this.PasswordTb.Name = "PasswordTb";
             this.PasswordTb.Size = new System.Drawing.Size(216, 26);
             this.PasswordTb.TabIndex = 11;
+            this.PasswordTb.TextChanged += new System.EventHandler(this.PasswordTb_TextChanged);
             // 
             // label7
             // 
@@ -183,13 +193,15 @@ namespace LeaveMs
             this.label7.Size = new System.Drawing.Size(212, 25);
             this.label7.TabIndex = 14;
             this.label7.Text = "Employee Address";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
-            // AddTb
+            // EmppAddTb
             // 
-            this.AddTb.Location = new System.Drawing.Point(650, 294);
-            this.AddTb.Name = "AddTb";
-            this.AddTb.Size = new System.Drawing.Size(216, 26);
-            this.AddTb.TabIndex = 13;
+            this.EmppAddTb.Location = new System.Drawing.Point(650, 294);
+            this.EmppAddTb.Name = "EmppAddTb";
+            this.EmppAddTb.Size = new System.Drawing.Size(216, 26);
+            this.EmppAddTb.TabIndex = 13;
+            this.EmppAddTb.TextChanged += new System.EventHandler(this.EmppAddTb_TextChanged);
             // 
             // EditBtn
             // 
@@ -204,6 +216,7 @@ namespace LeaveMs
             this.EditBtn.TabIndex = 15;
             this.EditBtn.Text = "EDIT";
             this.EditBtn.UseVisualStyleBackColor = false;
+            this.EditBtn.Click += new System.EventHandler(this.EditBtn_Click);
             // 
             // DeleteBtn
             // 
@@ -218,6 +231,7 @@ namespace LeaveMs
             this.DeleteBtn.TabIndex = 16;
             this.DeleteBtn.Text = "DELETE";
             this.DeleteBtn.UseVisualStyleBackColor = false;
+            this.DeleteBtn.Click += new System.EventHandler(this.DeleteBtn_Click);
             // 
             // SaveBtn
             // 
@@ -241,14 +255,18 @@ namespace LeaveMs
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(943, 10);
             this.panel2.TabIndex = 19;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // EmployeeList
             // 
+            this.EmployeeList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.EmployeeList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.EmployeeList.Location = new System.Drawing.Point(180, 433);
             this.EmployeeList.Name = "EmployeeList";
+            this.EmployeeList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.EmployeeList.Size = new System.Drawing.Size(890, 250);
             this.EmployeeList.TabIndex = 20;
+            this.EmployeeList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.EmployeeList_CellContentClick);
             // 
             // label8
             // 
@@ -261,6 +279,7 @@ namespace LeaveMs
             this.label8.Size = new System.Drawing.Size(157, 25);
             this.label8.TabIndex = 21;
             this.label8.Text = "Employee list";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // pictureBox3
             // 
@@ -271,6 +290,7 @@ namespace LeaveMs
             this.pictureBox3.Size = new System.Drawing.Size(53, 56);
             this.pictureBox3.TabIndex = 23;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // pictureBox4
             // 
@@ -288,9 +308,9 @@ namespace LeaveMs
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(2)))), ((int)(((byte)(82)))));
             this.panel3.Controls.Add(this.label13);
             this.panel3.Controls.Add(this.pictureBox5);
-            this.panel3.Controls.Add(this.label11);
-            this.panel3.Controls.Add(this.label9);
-            this.panel3.Controls.Add(this.label10);
+            this.panel3.Controls.Add(this.CategoryLbl);
+            this.panel3.Controls.Add(this.EmpLbl);
+            this.panel3.Controls.Add(this.LeaveLbl);
             this.panel3.Controls.Add(this.pictureBox1);
             this.panel3.Controls.Add(this.pictureBox4);
             this.panel3.Controls.Add(this.pictureBox3);
@@ -313,6 +333,7 @@ namespace LeaveMs
             this.label13.Size = new System.Drawing.Size(82, 16);
             this.label13.TabIndex = 33;
             this.label13.Text = "Leaves M.S";
+            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // pictureBox5
             // 
@@ -323,42 +344,46 @@ namespace LeaveMs
             this.pictureBox5.Size = new System.Drawing.Size(52, 46);
             this.pictureBox5.TabIndex = 32;
             this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
             // 
-            // label11
+            // CategoryLbl
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(54, 281);
-            this.label11.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(80, 16);
-            this.label11.TabIndex = 31;
-            this.label11.Text = "Categories";
+            this.CategoryLbl.AutoSize = true;
+            this.CategoryLbl.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CategoryLbl.ForeColor = System.Drawing.Color.White;
+            this.CategoryLbl.Location = new System.Drawing.Point(54, 281);
+            this.CategoryLbl.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.CategoryLbl.Name = "CategoryLbl";
+            this.CategoryLbl.Size = new System.Drawing.Size(80, 16);
+            this.CategoryLbl.TabIndex = 31;
+            this.CategoryLbl.Text = "Categories";
+            this.CategoryLbl.Click += new System.EventHandler(this.CategoryLbl_Click);
             // 
-            // label9
+            // EmpLbl
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(58, 160);
-            this.label9.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(78, 16);
-            this.label9.TabIndex = 30;
-            this.label9.Text = "Employee ";
+            this.EmpLbl.AutoSize = true;
+            this.EmpLbl.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EmpLbl.ForeColor = System.Drawing.Color.White;
+            this.EmpLbl.Location = new System.Drawing.Point(58, 160);
+            this.EmpLbl.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.EmpLbl.Name = "EmpLbl";
+            this.EmpLbl.Size = new System.Drawing.Size(78, 16);
+            this.EmpLbl.TabIndex = 30;
+            this.EmpLbl.Text = "Employee ";
+            this.EmpLbl.Click += new System.EventHandler(this.label9_Click);
             // 
-            // label10
+            // LeaveLbl
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(64, 219);
-            this.label10.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(53, 16);
-            this.label10.TabIndex = 29;
-            this.label10.Text = "Leaves";
+            this.LeaveLbl.AutoSize = true;
+            this.LeaveLbl.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LeaveLbl.ForeColor = System.Drawing.Color.White;
+            this.LeaveLbl.Location = new System.Drawing.Point(64, 219);
+            this.LeaveLbl.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.LeaveLbl.Name = "LeaveLbl";
+            this.LeaveLbl.Size = new System.Drawing.Size(53, 16);
+            this.LeaveLbl.TabIndex = 29;
+            this.LeaveLbl.Text = "Leaves";
+            this.LeaveLbl.Click += new System.EventHandler(this.label10_Click);
             // 
             // pictureBox1
             // 
@@ -369,6 +394,7 @@ namespace LeaveMs
             this.pictureBox1.Size = new System.Drawing.Size(53, 56);
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // pictureBox2
             // 
@@ -379,6 +405,7 @@ namespace LeaveMs
             this.pictureBox2.Size = new System.Drawing.Size(53, 56);
             this.pictureBox2.TabIndex = 23;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // label12
             // 
@@ -391,6 +418,7 @@ namespace LeaveMs
             this.label12.Size = new System.Drawing.Size(53, 16);
             this.label12.TabIndex = 30;
             this.label12.Text = "Logout";
+            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // EmpGenCb
             // 
@@ -402,6 +430,7 @@ namespace LeaveMs
             this.EmpGenCb.Name = "EmpGenCb";
             this.EmpGenCb.Size = new System.Drawing.Size(209, 28);
             this.EmpGenCb.TabIndex = 31;
+            this.EmpGenCb.SelectedIndexChanged += new System.EventHandler(this.EmpGenCb_SelectedIndexChanged);
             // 
             // Employee
             // 
@@ -419,7 +448,7 @@ namespace LeaveMs
             this.Controls.Add(this.DeleteBtn);
             this.Controls.Add(this.EditBtn);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.AddTb);
+            this.Controls.Add(this.EmppAddTb);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.PasswordTb);
             this.Controls.Add(this.label5);
@@ -463,7 +492,7 @@ namespace LeaveMs
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox PasswordTb;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox AddTb;
+        private System.Windows.Forms.TextBox EmppAddTb;
         private System.Windows.Forms.Button EditBtn;
         private System.Windows.Forms.Button DeleteBtn;
         private System.Windows.Forms.Button SaveBtn;
@@ -473,9 +502,9 @@ namespace LeaveMs
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label CategoryLbl;
+        private System.Windows.Forms.Label EmpLbl;
+        private System.Windows.Forms.Label LeaveLbl;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label12;

@@ -10,5 +10,5 @@ C:\Users\A\source\repos\LeaveMs\obj\Debug\LeaveMs.pdb
 C:\Users\A\source\repos\LeaveMs\obj\Debug\LeaveMs.Login.resources
 C:\Users\A\source\repos\LeaveMs\obj\Debug\LeaveMs.Employee.resources
 C:\Users\A\source\repos\LeaveMs\obj\Debug\LeaveMs.Leaves.resources
-C:\Users\A\source\repos\LeaveMs\obj\Debug\LeaveMs.Categories.resources
 C:\Users\A\source\repos\LeaveMs\obj\Debug\LeaveMs.ViewLeaves.resources
+C:\Users\A\source\repos\LeaveMs\obj\Debug\LeaveMs.Categories.resources

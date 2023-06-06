@@ -30,7 +30,7 @@ namespace LeaveMs
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Leaves));
-            this.EmpGenCb = new System.Windows.Forms.ComboBox();
+            this.CatCb = new System.Windows.Forms.ComboBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -46,7 +46,7 @@ namespace LeaveMs
             this.DeleteBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.EmployeeList = new System.Windows.Forms.DataGridView();
+            this.LeaveList = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.EditBtn = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -56,30 +56,32 @@ namespace LeaveMs
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.EmpCb = new System.Windows.Forms.ComboBox();
+            this.StatusCb = new System.Windows.Forms.ComboBox();
+            this.DateStartTb = new System.Windows.Forms.DateTimePicker();
+            this.DateEndTb = new System.Windows.Forms.DateTimePicker();
+            this.SearchCb = new System.Windows.Forms.ComboBox();
+            this.RefreshBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.EmployeeList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LeaveList)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // EmpGenCb
+            // CatCb
             // 
-            this.EmpGenCb.FormattingEnabled = true;
-            this.EmpGenCb.Items.AddRange(new object[] {
+            this.CatCb.FormattingEnabled = true;
+            this.CatCb.Items.AddRange(new object[] {
             "Male",
             "Female"});
-            this.EmpGenCb.Location = new System.Drawing.Point(446, 149);
-            this.EmpGenCb.Name = "EmpGenCb";
-            this.EmpGenCb.Size = new System.Drawing.Size(209, 28);
-            this.EmpGenCb.TabIndex = 51;
+            this.CatCb.Location = new System.Drawing.Point(446, 149);
+            this.CatCb.Name = "CatCb";
+            this.CatCb.Size = new System.Drawing.Size(209, 28);
+            this.CatCb.TabIndex = 51;
             // 
             // pictureBox5
             // 
@@ -102,6 +104,7 @@ namespace LeaveMs
             this.label11.Size = new System.Drawing.Size(80, 16);
             this.label11.TabIndex = 31;
             this.label11.Text = "Categories";
+            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // label9
             // 
@@ -114,6 +117,7 @@ namespace LeaveMs
             this.label9.Size = new System.Drawing.Size(78, 16);
             this.label9.TabIndex = 30;
             this.label9.Text = "Employee ";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // label10
             // 
@@ -126,6 +130,7 @@ namespace LeaveMs
             this.label10.Size = new System.Drawing.Size(53, 16);
             this.label10.TabIndex = 29;
             this.label10.Text = "Leaves";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // label12
             // 
@@ -223,6 +228,7 @@ namespace LeaveMs
             this.SaveBtn.TabIndex = 45;
             this.SaveBtn.Text = "SAVE";
             this.SaveBtn.UseVisualStyleBackColor = false;
+            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
             // DeleteBtn
             // 
@@ -237,6 +243,7 @@ namespace LeaveMs
             this.DeleteBtn.TabIndex = 44;
             this.DeleteBtn.Text = "DELETE";
             this.DeleteBtn.UseVisualStyleBackColor = false;
+            this.DeleteBtn.Click += new System.EventHandler(this.DeleteBtn_Click);
             // 
             // label1
             // 
@@ -261,13 +268,16 @@ namespace LeaveMs
             this.label8.TabIndex = 48;
             this.label8.Text = "Leaves list";
             // 
-            // EmployeeList
+            // LeaveList
             // 
-            this.EmployeeList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.EmployeeList.Location = new System.Drawing.Point(180, 433);
-            this.EmployeeList.Name = "EmployeeList";
-            this.EmployeeList.Size = new System.Drawing.Size(890, 250);
-            this.EmployeeList.TabIndex = 47;
+            this.LeaveList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.LeaveList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.LeaveList.Location = new System.Drawing.Point(180, 433);
+            this.LeaveList.Name = "LeaveList";
+            this.LeaveList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.LeaveList.Size = new System.Drawing.Size(890, 250);
+            this.LeaveList.TabIndex = 47;
+            this.LeaveList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.LeaveList_CellContentClick);
             // 
             // panel2
             // 
@@ -290,6 +300,7 @@ namespace LeaveMs
             this.EditBtn.TabIndex = 43;
             this.EditBtn.Text = "EDIT";
             this.EditBtn.UseVisualStyleBackColor = false;
+            this.EditBtn.Click += new System.EventHandler(this.EditBtn_Click);
             // 
             // label7
             // 
@@ -373,50 +384,78 @@ namespace LeaveMs
             this.panel1.Size = new System.Drawing.Size(1096, 46);
             this.panel1.TabIndex = 32;
             // 
-            // comboBox1
+            // EmpCb
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.EmpCb.FormattingEnabled = true;
+            this.EmpCb.Items.AddRange(new object[] {
             "Male",
             "Female"});
-            this.comboBox1.Location = new System.Drawing.Point(189, 149);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(209, 28);
-            this.comboBox1.TabIndex = 52;
+            this.EmpCb.Location = new System.Drawing.Point(189, 149);
+            this.EmpCb.Name = "EmpCb";
+            this.EmpCb.Size = new System.Drawing.Size(209, 28);
+            this.EmpCb.TabIndex = 52;
             // 
-            // comboBox2
+            // StatusCb
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.StatusCb.FormattingEnabled = true;
+            this.StatusCb.Items.AddRange(new object[] {
             "Pending",
             "Approved",
             "Reject"});
-            this.comboBox2.Location = new System.Drawing.Point(625, 283);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(209, 28);
-            this.comboBox2.TabIndex = 53;
+            this.StatusCb.Location = new System.Drawing.Point(625, 283);
+            this.StatusCb.Name = "StatusCb";
+            this.StatusCb.Size = new System.Drawing.Size(209, 28);
+            this.StatusCb.TabIndex = 53;
             // 
-            // dateTimePicker1
+            // DateStartTb
             // 
-            this.dateTimePicker1.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(1)))), ((int)(((byte)(113)))));
-            this.dateTimePicker1.Location = new System.Drawing.Point(686, 151);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 26);
-            this.dateTimePicker1.TabIndex = 54;
+            this.DateStartTb.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(1)))), ((int)(((byte)(113)))));
+            this.DateStartTb.Location = new System.Drawing.Point(686, 151);
+            this.DateStartTb.Name = "DateStartTb";
+            this.DateStartTb.Size = new System.Drawing.Size(200, 26);
+            this.DateStartTb.TabIndex = 54;
             // 
-            // dateTimePicker2
+            // DateEndTb
             // 
-            this.dateTimePicker2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.DateEndTb.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateTimePicker2.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(1)))), ((int)(((byte)(113)))));
-            this.dateTimePicker2.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(1)))), ((int)(((byte)(113)))));
-            this.dateTimePicker2.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(1)))), ((int)(((byte)(113)))));
-            this.dateTimePicker2.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(1)))), ((int)(((byte)(113)))));
-            this.dateTimePicker2.CalendarTrailingForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(1)))), ((int)(((byte)(113)))));
-            this.dateTimePicker2.Location = new System.Drawing.Point(358, 282);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 26);
-            this.dateTimePicker2.TabIndex = 55;
+            this.DateEndTb.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(1)))), ((int)(((byte)(113)))));
+            this.DateEndTb.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(1)))), ((int)(((byte)(113)))));
+            this.DateEndTb.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(1)))), ((int)(((byte)(113)))));
+            this.DateEndTb.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(1)))), ((int)(((byte)(113)))));
+            this.DateEndTb.CalendarTrailingForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(1)))), ((int)(((byte)(113)))));
+            this.DateEndTb.Location = new System.Drawing.Point(358, 282);
+            this.DateEndTb.Name = "DateEndTb";
+            this.DateEndTb.Size = new System.Drawing.Size(200, 26);
+            this.DateEndTb.TabIndex = 55;
+            // 
+            // SearchCb
+            // 
+            this.SearchCb.FormattingEnabled = true;
+            this.SearchCb.Items.AddRange(new object[] {
+            "Pending",
+            "Approved",
+            "Reject"});
+            this.SearchCb.Location = new System.Drawing.Point(650, 379);
+            this.SearchCb.Name = "SearchCb";
+            this.SearchCb.Size = new System.Drawing.Size(209, 28);
+            this.SearchCb.TabIndex = 56;
+            this.SearchCb.SelectedIndexChanged += new System.EventHandler(this.SearchCb_SelectedIndexChanged);
+            // 
+            // RefreshBtn
+            // 
+            this.RefreshBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(1)))), ((int)(((byte)(113)))));
+            this.RefreshBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(2)))), ((int)(((byte)(82)))));
+            this.RefreshBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RefreshBtn.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RefreshBtn.ForeColor = System.Drawing.Color.White;
+            this.RefreshBtn.Location = new System.Drawing.Point(882, 371);
+            this.RefreshBtn.Name = "RefreshBtn";
+            this.RefreshBtn.Size = new System.Drawing.Size(112, 36);
+            this.RefreshBtn.TabIndex = 57;
+            this.RefreshBtn.Text = "refresh";
+            this.RefreshBtn.UseVisualStyleBackColor = false;
+            this.RefreshBtn.Click += new System.EventHandler(this.RefreshBtn_Click);
             // 
             // Leaves
             // 
@@ -424,17 +463,19 @@ namespace LeaveMs
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1096, 695);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.EmpGenCb);
+            this.Controls.Add(this.RefreshBtn);
+            this.Controls.Add(this.SearchCb);
+            this.Controls.Add(this.DateEndTb);
+            this.Controls.Add(this.DateStartTb);
+            this.Controls.Add(this.StatusCb);
+            this.Controls.Add(this.EmpCb);
+            this.Controls.Add(this.CatCb);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.SaveBtn);
             this.Controls.Add(this.DeleteBtn);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.EmployeeList);
+            this.Controls.Add(this.LeaveList);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.EditBtn);
             this.Controls.Add(this.label7);
@@ -457,7 +498,7 @@ namespace LeaveMs
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.EmployeeList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LeaveList)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -467,7 +508,7 @@ namespace LeaveMs
 
         #endregion
 
-        private System.Windows.Forms.ComboBox EmpGenCb;
+        private System.Windows.Forms.ComboBox CatCb;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label9;
@@ -483,7 +524,7 @@ namespace LeaveMs
         private System.Windows.Forms.Button DeleteBtn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DataGridView EmployeeList;
+        private System.Windows.Forms.DataGridView LeaveList;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button EditBtn;
         private System.Windows.Forms.Label label7;
@@ -493,9 +534,11 @@ namespace LeaveMs
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.ComboBox EmpCb;
+        private System.Windows.Forms.ComboBox StatusCb;
+        private System.Windows.Forms.DateTimePicker DateStartTb;
+        private System.Windows.Forms.DateTimePicker DateEndTb;
+        private System.Windows.Forms.ComboBox SearchCb;
+        private System.Windows.Forms.Button RefreshBtn;
     }
 }
